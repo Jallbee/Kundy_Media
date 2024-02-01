@@ -1,0 +1,23 @@
+body { background-color: gray;
+	color: darkorange;}
+	.card1{border-style: solid;
+	border-color: #ED820E;
+ margin-top: 20px; 
+ padding:20px; background-color: #FF8106; color:black;float: center;}
+ 
+
+ .card2{border-style: solid;
+	border-color: #ED820E;
+ margin-top: 20px; 
+ padding:20px; background-color: #FF8106; color:black; float: left; width: 45%}
+ 
+
+ .card3{border-style: solid;
+	border-color: #ED820E;
+ margin-top: 20px; 
+ padding:20px; background-color: #FF8106; color:black;float:center ;}
+ 
+ .card4{border-style: solid;
+	border-color: #ED820E;
+ margin-top: 20px; 
+ padding:20px; background-color: #FF8106; color:black;float:right ; width: 45%}
