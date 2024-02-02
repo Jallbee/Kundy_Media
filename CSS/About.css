@@ -7,7 +7,17 @@ body {  background-image:linear-gradient(grey,black);
  
 .grid-container {
   display: grid;
-  column-gap: 50px;
-  row-gap: 50px;
+  height: 400px;
+  align-content: center;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  padding: 10px;
 }
-.grid-item{ border-style:solid; border-color:darkorange; }
+
+.grid-container > div {
+	border-style: solid;
+	border-color: darkorange;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
