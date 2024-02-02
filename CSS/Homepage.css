@@ -1,3 +1,43 @@
-body { background-color: gray;
+body { background-image:linear-gradient(grey,black);
 	color: darkorange;}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  display: inline;
+}
 
+a{color: darkorange;}
+
+.grid-container {
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+}
+
+.grid-item {
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.item1 {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+
+.item2 {
+  grid-column: 3;
+  grid-row: 1 / span 1;
+}
+
+.item5 {
+  grid-column: 1 / span 3;
+  grid-row: 3;
+}
+
+
+  
+  

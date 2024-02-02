@@ -1,23 +1,13 @@
-body { background-color: gray;
+body {  background-image:linear-gradient(grey,black); 
 	color: darkorange;}
 	.card1{border-style: solid;
 	border-color: #ED820E;
  margin-top: 20px; 
  padding:20px; background-color: #FF8106; color:black;float: center;}
  
-
- .card2{border-style: solid;
-	border-color: #ED820E;
- margin-top: 20px; 
- padding:20px; background-color: #FF8106; color:black; float: left; width: 45%}
- 
-
- .card3{border-style: solid;
-	border-color: #ED820E;
- margin-top: 20px; 
- padding:20px; background-color: #FF8106; color:black;float:center ;}
- 
- .card4{border-style: solid;
-	border-color: #ED820E;
- margin-top: 20px; 
- padding:20px; background-color: #FF8106; color:black;float:right ; width: 45%}
+.grid-container {
+  display: grid;
+  column-gap: 50px;
+  row-gap: 50px;
+}
+.grid-item{ border-style:solid; border-color:darkorange; }
