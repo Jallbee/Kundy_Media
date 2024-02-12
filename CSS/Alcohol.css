@@ -1,2 +1,70 @@
 body { background-image:linear-gradient(grey,black);
 	color: darkorange;}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  width: 30%;
+  background-color: #71797E;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card p {
+  margin: 10px 0;
+}
+
+.card a {
+  color: #007bff;
+  text-decoration: none;
+  margin-top: 10px; /* Add margin top */
+  display: block; /* Display the link as a block element */
+}
+
+.star-rating {
+  display: inline-block;
+  unicode-bidi: bidi-override;
+  color: #c5c5c5;
+  font-size: 25px;
+  position: relative;
+  width: 125px;
+}
+
+.star-rating .star {
+  display: inline-block;
+  position: relative;
+  width: 25px;
+  cursor: pointer;
+}
+
+.star-rating .star:before {
+  content: "\2605";
+  position: absolute;
+}
+
+.star-rating .star:not(:first-child) {
+  margin-left: 2px;
+}
+
+.star-rating .star:hover:before,
+.star-rating .star:hover ~ .star:before,
+.star-rating .star.selected:before,
+.star-rating .star.selected ~ .star:before {
+  color: #ffca08;
+}
