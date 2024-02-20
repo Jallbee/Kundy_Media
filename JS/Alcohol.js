@@ -1,4 +1,4 @@
-ar reviews = [
+var reviews = [
   {
     productName: "Collective arts complementary colors sour ale",
     rating: 3,
