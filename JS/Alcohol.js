@@ -1,4 +1,4 @@
-var reviews = [
+ar reviews = [
   {
     productName: "Collective arts complementary colors sour ale",
     rating: 3,
@@ -67,3 +67,22 @@ function displayReviews() {
 }
 
 window.onload = displayReviews;
+
+
+document.getElementById('drinkForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            
+            var drinkName = document.getElementById('drinkName').value;
+            var description = document.getElementById('description').value;
+
+            
+            var suggestionElement = document.createElement('div');
+            suggestionElement.innerHTML = '<strong>' + drinkName + '</strong>: ' + description;
+
+            
+            document.getElementById('suggestions').appendChild(suggestionElement);
+
+            
+            document.getElementById('drinkForm').reset();
+        });
