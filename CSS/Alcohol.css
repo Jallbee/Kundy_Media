@@ -1,5 +1,5 @@
 body { background-image:linear-gradient(grey,black);
-	color: darkorange;}
+  color: darkorange;}
 
 .container {
   max-width: 800px;
@@ -14,13 +14,22 @@ body { background-image:linear-gradient(grey,black);
 }
 
 .card {
-  width: 30%;
+  width: calc(30% - 10px); 
   background-color: #71797E;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 20px;
   margin-bottom: 20px;
 }
+
+.card a {
+  color: #007bff;
+  text-decoration: none;
+  display: block;
+  margin-top: 10px;
+  padding-top: 20px; 
+}
+
 
 .card h2 {
   margin-top: 0;
@@ -30,12 +39,7 @@ body { background-image:linear-gradient(grey,black);
   margin: 10px 0;
 }
 
-.card a {
-  color: #007bff;
-  text-decoration: none;
-  margin-top: 10px; /* Add margin top */
-  display: block; /* Display the link as a block element */
-}
+
 
 .star-rating {
   display: inline-block;
