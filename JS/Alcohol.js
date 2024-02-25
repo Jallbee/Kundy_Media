@@ -31,58 +31,47 @@ var reviews = [
   }
 ];
 
-function displayReviews() {
-  var reviewsContainer = document.getElementById('reviews');
-  reviews.forEach(function(review) {
-    var card = document.createElement('div');
-    card.classList.add('card');
+$(document).ready(function() {
+  function displayReviews() {
+    var reviewsContainer = $('#reviews');
+    reviews.forEach(function(review) {
+      var card = $('<div>').addClass('card');
 
-    var productName = document.createElement('h2');
-    productName.textContent = review.productName;
-    card.appendChild(productName);
+      var productName = $('<h2>').text(review.productName);
+      card.append(productName);
 
-    var starRating = document.createElement('div');
-    starRating.classList.add('star-rating');
-    for (var i = 1; i <= 5; i++) {
-      var star = document.createElement('span');
-      star.classList.add('star');
-      if (i <= review.rating) {
-        star.classList.add('selected');
+      var starRating = $('<div>').addClass('star-rating');
+      for (var i = 1; i <= 5; i++) {
+        var star = $('<span>').addClass('star');
+        if (i <= review.rating) {
+          star.addClass('selected');
+        }
+        starRating.append(star);
       }
-      starRating.appendChild(star);
-    }
-    card.appendChild(starRating);
+      card.append(starRating);
 
-    var reviewText = document.createElement('p');
-    reviewText.textContent = review.reviewText;
-    card.appendChild(reviewText);
+      var reviewText = $('<p>').text(review.reviewText);
+      card.append(reviewText);
 
-    var videoLink = document.createElement('a');
-    videoLink.href = review.videoLink;
-    videoLink.textContent = 'Watch Full Review';
-    card.appendChild(videoLink);
+      var videoLink = $('<a>').attr('href', review.videoLink).text('Watch Full Review');
+      card.append(videoLink);
 
-    reviewsContainer.appendChild(card);
+      reviewsContainer.append(card);
+    });
+  }
+
+  displayReviews();
+
+  $('#drinkForm').submit(function(event) {
+    event.preventDefault();
+
+    var drinkName = $('#drinkName').val();
+    var description = $('#description').val();
+
+    var suggestionElement = $('<div>').html('<strong>' + drinkName + '</strong>: ' + description);
+
+    $('#suggestions').append(suggestionElement);
+
+    $('#drinkForm').trigger('reset');
   });
-}
-
-window.onload = displayReviews;
-
-
-document.getElementById('drinkForm').addEventListener('submit', function(event) {
-            event.preventDefault(); 
-
-            
-            var drinkName = document.getElementById('drinkName').value;
-            var description = document.getElementById('description').value;
-
-            
-            var suggestionElement = document.createElement('div');
-            suggestionElement.innerHTML = '<strong>' + drinkName + '</strong>: ' + description;
-
-            
-            document.getElementById('suggestions').appendChild(suggestionElement);
-
-            
-            document.getElementById('drinkForm').reset();
-        });
+});
