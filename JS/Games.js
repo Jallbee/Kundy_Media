@@ -7,7 +7,7 @@
                     displayReviews(this);
                 }
             };
-            xhttp.open("GET", "video_game_reviews.xml", true);
+            xhttp.open("GET", "game_reviews.xml", true);
             xhttp.send();
         }
 
