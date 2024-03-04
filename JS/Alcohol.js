@@ -11,9 +11,10 @@ function displayReviews(reviews) {
         for (var i = 1; i <= 5; i++) {
             var star = $('<span>').addClass('star');
             if (i <= review.rating) {
-                star.addClass('selected');
+                star.text('⭐'); // Display filled star if i is less than or equal to review.rating
+            } else {
+                star.text('☆'); // Display empty star otherwise
             }
-            star.text('★'); // Add this line to display stars
             starRating.append(star);
         }
         card.append(starRating);
@@ -26,6 +27,8 @@ function displayReviews(reviews) {
 
         reviewsContainer.append(card);
     });
+}
+
 }
 
 
