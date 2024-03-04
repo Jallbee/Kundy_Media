@@ -36,8 +36,8 @@ $(document).ready(function() {
                     success: function(reviews) {
                         displayReviews(reviews);
                     },
-                    error: function(xhr, status, error) {
-                        console.error('Error fetching reviews:', error);
+                    error:function(xhr, status, error) {
+                    console.error('Error fetching reviews:', error);
                     }
                 });
 
