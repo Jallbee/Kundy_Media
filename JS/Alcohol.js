@@ -1,4 +1,3 @@
-$(document).ready(function() {
 function displayReviews(reviews) {
     var reviewsContainer = $('#reviews');
     reviews.forEach(function(review) {
@@ -29,9 +28,7 @@ function displayReviews(reviews) {
     });
 }
 
-}
-
-
+$(document).ready(function() {
     $.ajax({
         url: 'reviews.json',
         method: 'GET',
@@ -57,3 +54,4 @@ function displayReviews(reviews) {
         $('#drinkForm').trigger('reset');
     });
 });
+
