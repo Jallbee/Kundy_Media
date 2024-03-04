@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<video_game_reviews>
+    <review>
+        <title>The Witcher 3: Wild Hunt</title>
+        <rating>9.5</rating>
+        <author>JohnDoe</author>
+        <content>
+            <![CDATA[
+            The Witcher 3 is an amazing game with a vast open world, captivating story, and rich characters. The graphics are stunning, and the gameplay is immersive. Highly recommended!
+            ]]>
+        </content>
+    </review>
+    <review>
+        <title>Red Dead Redemption 2</title>
+        <rating>9.8</rating>
+        <author>JaneDoe</author>
+        <content>
+            <![CDATA[
+            Red Dead Redemption 2 sets a new standard for open-world gaming. The attention to detail is incredible, and the story is gripping from start to finish. A masterpiece!
+            ]]>
+        </content>
+    </review>
+    <!-- Add more reviews here -->
+</video_game_reviews>
