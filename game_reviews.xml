@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <video_game_reviews>
     <review>
-        <title>Baulder's Gate 3</title>
-        <rating>9</rating>
+        <title>Another Code - R</title>
+        <rating>8/10</rating>
         <author>Jenny</author>
         <content>
-            "Baulder's Gate 3 was my first ever game like this. i had never really played d&d before either. It honstley was my favorite game of 2023. "
+            <![CDATA[Is remake of one my favorite mystery puzzles from DS.
+
+And just the old game it gave me same nostalgia and frustration as the old one. With new puzzles and Updates to the  story definitely worth a try  ]]>
         </content>
     </review>
     <review>
@@ -13,7 +15,7 @@
         <rating>9.8</rating>
         <author>Ben</author>
         <content> 
-            <Elden Ring is a great game.
+            <![CDATA Elden Ring is a great game.
 
 I will say that this game is not for everyone's tastes so this is not a complete blanket statement and no one should ever have to defend their dislike of the game for any reason.
 
@@ -22,7 +24,7 @@ Now the gameplay is what loses most players from playing completely through or e
 Veteran players liken the combat to a dance or a rhythm game as enemies and bosses will likely fall into a pattern and can be predicted if you can practice the flow of the combative dance they show to you. However if you try to fight the flow and go off rhythm or just try to brute force the enemy with no regards to any defense, you will be hurt or killed, these are gods and monsters you are fighting and you are just a person.
 
 Whether you can conquer this flow or not will determine whether you can enjoy the game. The same as with a standard rhythm game, the joy comes from learning the pattern and flow and mastering the song. The only difference is that the song of this game happens to be a dragon, a 8ft tall abomination with 12 arms or a literal God.
->
+]]>
         </content>
     </review>
     <!-- Add more reviews here -->
