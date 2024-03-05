@@ -14,7 +14,7 @@
   background-color: #F08000;
   padding: 40px;
   margin: auto; 
-  max-width: 100%; 
+  max-width: 97%; 
   height: 100vh;
   width: 100vw;
 }
@@ -25,4 +25,5 @@
   padding: 20px 0;
   font-size: 30px;
 }
-.body{ background-color:darkorange; }
+.body{ background-color:darkorange; 
+margin: 0;}
