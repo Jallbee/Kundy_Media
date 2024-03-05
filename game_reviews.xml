@@ -25,5 +25,36 @@ Whether you can conquer this flow or not will determine whether you can enjoy th
 
         </content>
     </review>
-    <!-- Add more reviews here -->
+      <review>
+        <title>Baulders Gate 3</title>
+        <rating>8/10</rating>
+        <author>Jenny</author>
+        <content>
+            Review
+        </content>
+    </review>
+      <review>
+        <title>Game name</title>
+        <rating>8/10</rating>
+        <author>Dan</author>
+        <content>
+            Review
+        </content>
+    </review>
+      <review>
+        <title>Game name</title>
+        <rating>8/10</rating>
+        <author>Jay</author>
+        <content>
+            Review 
+        </content>
+    </review>
+      <review>
+        <title>Game Name</title>
+        <rating>8/10</rating>
+        <author>Jess</author>
+        <content>
+            Review
+        </content>
+    </review>
 </video_game_reviews>
