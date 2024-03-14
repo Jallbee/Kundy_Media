@@ -25,9 +25,8 @@ function fetchAndDisplayReviews() {
 }
 
 function displayReviews(xml) {
-  if (xml && xml.responseXML) {
-    var xmlDoc = xml.responseXML;
-    var reviews = xmlDoc.getElementsByTagName("review");
+  if (xml) {
+    var reviews = xml.getElementsByTagName("review");
     var html = "";
     for (var i = 0; i < reviews.length; i++) {
       var title = reviews[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
