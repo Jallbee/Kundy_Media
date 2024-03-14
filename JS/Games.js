@@ -9,7 +9,7 @@
     xhttp.send();
 }
 
-f function displayReviews(xml) {
+function displayReviews(xml) {
     if (xml && xml.responseXML) {
         var xmlDoc = xml.responseXML;
         var reviews = xmlDoc.getElementsByTagName("review");
