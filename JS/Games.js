@@ -32,9 +32,17 @@ function displayReviews(xml) {
     }
 }
   
-window.onload = function() {
-    loadReviews();
-};
+window.onload = function loadReviews() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            displayReviews(this);
+        }
+    };
+    xhttp.open("GET", "game_reviews.xml", true);
+    xhttp.send();
+    
+    console.log('Request sent');
 
 document.getElementById('gameForm').addEventListener('submit', function(event) {
     event.preventDefault(); 
