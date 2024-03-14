@@ -1,13 +1,12 @@
- function loadReviews() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            displayReviews(this);
-        }
-    };
-    xhttp.open("GET", "game_reviews.xml", true);
-    xhttp.send();
-}
+fetch('game_reviews.xml')
+  .then(response => response.text())
+  .then(data => {
+    var parser = new DOMParser();
+    var xmlDoc = parser.parseFromString(data, 'text/xml');
+    displayReviews(xmlDoc);
+  })
+  .catch(error => console.error('Error fetching XML:', error));
+
 
 function displayReviews(xml) {
     if (xml && xml.responseXML) {
