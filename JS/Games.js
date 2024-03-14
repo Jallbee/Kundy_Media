@@ -43,6 +43,7 @@ window.onload = function loadReviews() {
     xhttp.send();
     
     console.log('Request sent');
+}
 
 document.getElementById('gameForm').addEventListener('submit', function(event) {
     event.preventDefault(); 
