@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function fetchAndDisplayReviews() {
   fetch('greviews.xml')
-    .then(response => {
+  .then(response => {
+    
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
