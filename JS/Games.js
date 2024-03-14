@@ -9,7 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function fetchAndDisplayReviews() {
   fetch('game_reviews.xml')
-    .then(response => response.text())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.text();
+    })
     .then(data => {
       var parser = new DOMParser();
       var xmlDoc = parser.parseFromString(data, 'text/xml');
@@ -18,45 +23,37 @@ function fetchAndDisplayReviews() {
     .catch(error => console.error('Error fetching XML:', error));
 }
 
-function displayReviews(xml) { {
-    if (xml && xml.responseXML) {
-        var xmlDoc = xml.responseXML;
-        var reviews = xmlDoc.getElementsByTagName("review");
-        var html = "";
-        for (var i = 0; i < reviews.length; i++) {
-            var title = reviews[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
-            var rating = reviews[i].getElementsByTagName("rating")[0].childNodes[0].nodeValue;
-            var author = reviews[i].getElementsByTagName("author")[0].childNodes[0].nodeValue;
-            var content = reviews[i].getElementsByTagName("content")[0].childNodes[0].nodeValue;
-            html += "<div>";
-            html += "<h2>" + title + "</h2>";
-            html += "<p><strong>Rating:</strong> " + rating + "</p>";
-            html += "<p><strong>Author:</strong> " + author + "</p>";
-            html += "<p>" + content + "</p>";
-            html += "</div>";
-        }
-        document.getElementById("reviews").innerHTML = html;
-    } else {
-        console.error('XML data is null or undefined');
+function displayReviews(xml) {
+  if (xml && xml.responseXML) {
+    var xmlDoc = xml.responseXML;
+    var reviews = xmlDoc.getElementsByTagName("review");
+    var html = "";
+    for (var i = 0; i < reviews.length; i++) {
+      var title = reviews[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+      var rating = reviews[i].getElementsByTagName("rating")[0].childNodes[0].nodeValue;
+      var author = reviews[i].getElementsByTagName("author")[0].childNodes[0].nodeValue;
+      var content = reviews[i].getElementsByTagName("content")[0].childNodes[0].nodeValue;
+      html += "<div>";
+      html += "<h2>" + title + "</h2>";
+      html += "<p><strong>Rating:</strong> " + rating + "</p>";
+      html += "<p><strong>Author:</strong> " + author + "</p>";
+      html += "<p>" + content + "</p>";
+      html += "</div>";
     }
+    document.getElementById("reviews").innerHTML = html;
+  } else {
+    console.error('XML data is null or undefined');
+  }
 }
   
-window.onload = function loadReviews() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            displayReviews(this);
-        }
-    };
-    xhttp.open("GET", "game_reviews.xml", true);
-    xhttp.send();
-    
-    console.log('Request sent');
-}
-
 function addGameSuggestion() {
   var gameName = document.getElementById('gameName').value;
   var description = document.getElementById('description').value;
+
+  if (!gameName || !description) {
+    alert("Please enter both game name and description.");
+    return;
+  }
 
   var suggestionElement = document.createElement('div');
   suggestionElement.innerHTML = '<strong>' + gameName + '</strong>: ' + description;
