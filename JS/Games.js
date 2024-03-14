@@ -63,3 +63,21 @@ function addGameSuggestion() {
 
   document.getElementById('gameForm').reset();
 }
+
+
+function fetchAndDisplayReviews() {
+  fetch('greviews.xml')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.text();
+    })
+    .then(data => {
+      console.log('Received data:', data); // Log the received data
+      var parser = new DOMParser();
+      var xmlDoc = parser.parseFromString(data, 'text/xml');
+      displayReviews(xmlDoc);
+    })
+    .catch(error => console.error('Error fetching XML:', error));
+}
