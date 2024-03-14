@@ -1,14 +1,24 @@
-fetch('game_reviews.xml')
-  .then(response => response.text())
-  .then(data => {
-    var parser = new DOMParser();
-    var xmlDoc = parser.parseFromString(data, 'text/xml');
-    displayReviews(xmlDoc);
-  })
-  .catch(error => console.error('Error fetching XML:', error));
+document.addEventListener('DOMContentLoaded', function() {
+  fetchAndDisplayReviews();
+  
+  document.getElementById('gameForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    addGameSuggestion();
+  });
+});
 
+function fetchAndDisplayReviews() {
+  fetch('game_reviews.xml')
+    .then(response => response.text())
+    .then(data => {
+      var parser = new DOMParser();
+      var xmlDoc = parser.parseFromString(data, 'text/xml');
+      displayReviews(xmlDoc);
+    })
+    .catch(error => console.error('Error fetching XML:', error));
+}
 
-function displayReviews(xml) {
+function displayReviews(xml) { {
     if (xml && xml.responseXML) {
         var xmlDoc = xml.responseXML;
         var reviews = xmlDoc.getElementsByTagName("review");
@@ -44,16 +54,14 @@ window.onload = function loadReviews() {
     console.log('Request sent');
 }
 
-document.getElementById('gameForm').addEventListener('submit', function(event) {
-    event.preventDefault(); 
+function addGameSuggestion() {
+  var gameName = document.getElementById('gameName').value;
+  var description = document.getElementById('description').value;
 
-    var gameName = document.getElementById('gameName').value;
-    var description = document.getElementById('description').value;
+  var suggestionElement = document.createElement('div');
+  suggestionElement.innerHTML = '<strong>' + gameName + '</strong>: ' + description;
 
-    var suggestionElement = document.createElement('div');
-    suggestionElement.innerHTML = '<strong>' + gameName + '</strong>: ' + description;
+  document.getElementById('suggestions').appendChild(suggestionElement);
 
-    document.getElementById('suggestions').appendChild(suggestionElement);
-
-    document.getElementById('gameForm').reset();
-});
+  document.getElementById('gameForm').reset();
+}
