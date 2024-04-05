@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Alcohol Recipes!</title>
+    <title>Alcohol Reviews!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/Alcohol.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-      <?php include 'Alcohol.php'; ?> 
     <div class="header"> 
         <a href="Homepage.html">
             <img src="Images/K-Media.PNG" alt="Kunda Media Logo" style="height:200px; width:220px;">
@@ -18,6 +16,7 @@
             <a href="Games.html"> Game Reviews</a>
             <a href="Contact.html"> Contact us!</a>
         </h3>
+    </div>
     </div>
     <div class="container">
         <h1>Alcohol Reviews</h1>
@@ -33,8 +32,13 @@
         <textarea id= "description" name= "description" rows= "4" required></textarea> 
         <!----><br> <!----><button type= "submit">Submit</button> <!----></form><!---->
 
-    <!----><div id= "suggestions"></div> <!---->
+   <div id= "suggestions"></div>
 
-    <!----><script src= "https://code.jquery.com/jquery-3.7.1.min.js"></script> <!----><script src= "JS/Alcohol.js"></script>
+    <script src= "https://code.jquery.com/jquery-3.7.1.min.js"></script> 
+    <script src= "JS/Alcohol.js"></script>
+
+    <?php include 'Alcohol.php'; ?>
+</body>
+</html>
 </body>
 </html>

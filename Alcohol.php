@@ -12,8 +12,9 @@ if ($data === null) {
 // Display ratings
 echo "<h1>Ratings</h1>";
 echo "<ul>";
-foreach ($data['ratings'] as $rating) {
-    echo "<li>{$rating['name']}: {$rating['rating']}</li>";
+foreach ($data as $review) {
+    // Display each review as needed
 }
 echo "</ul>";
 ?>
+Copy
