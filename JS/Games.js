@@ -24,7 +24,7 @@ function fetchAndDisplayReviews() {
     .catch(error => console.error('Error fetching XML:', error));
 }
 
-function displayReviews(xml) {
+function displayReviews(xml) {z
   if (xml) {
     var reviews = xml.getElementsByTagName("review");
     var html = "";
