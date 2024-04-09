@@ -5,8 +5,8 @@ $jsonData = file_get_contents('reviews.json');
 // Decode JSON data into PHP associative array
 $data = json_decode($jsonData, true);
 
-// Retrieve the rating
-$rating = $data['rating'];
+// Retrieve the rating (assuming it's an array of reviews)
+$rating = $data['reviews'][0]['rating']; // Assuming the rating is inside 'reviews' array
 
 // Function to convert rating into star rating
 function convertToStars($rating) {
@@ -32,6 +32,6 @@ function convertToStars($rating) {
 $starRating = convertToStars($rating);
 
 // Output star rating
-echo "Rating: $rating <br>";
-echo "Star Rating: $starRating";
+echo "Rating: " . number_format($rating, 1) . "<br>"; // Show the actual numeric value with one decimal place
+echo "Star Rating: " . $starRating;
 ?>
