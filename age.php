@@ -66,7 +66,7 @@ if (isset($age_verified) && $age_verified) {
         <?php if (isset($error_message)): ?>
             <p style="color: red;"><?php echo $error_message; ?></p>
         <?php endif; ?>
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <form action=" Alcohol.html" method="post">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required><br><br>
             
