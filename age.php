@@ -1,3 +1,43 @@
+<?php
+include 'validation_functions.php';
+
+// Check if the form has been submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $age = $_POST['age'];
+    $country = $_POST['country'];
+
+    // Validate name length
+    if (!is_valid_text_length($name, 2, 50)) {
+        $error_message = "Name must be between 2 and 50 characters long.";
+    }
+
+    // Validate age
+    if (!isset($error_message) && !is_valid_number($age, 21, 150)) {
+        $error_message = "Invalid age.";
+    }
+
+    // Valid options for country
+    $options = array("USA", "UK", "Canada");
+
+    // Validate country
+    if (!isset($error_message) && !is_valid_option($country, $options)) {
+        $error_message = "Invalid country.";
+    }
+
+    // If there are no errors, user passed the age verification
+    if (!isset($error_message)) {
+        $age_verified = true;
+    }
+}
+
+// If age is verified, redirect to the unlocked page
+if (isset($age_verified) && $age_verified) {
+    header("Location: ./Alcohol.html");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,44 +85,6 @@
     <?php endif; ?>
 </body>
 </html>
-<?php
-include 'validation_functions.php';
 
-// Check if the form has been submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $age = $_POST['age'];
-    $country = $_POST['country'];
-
-    // Validate name length
-    if (!is_valid_text_length($name, 2, 50)) {
-        $error_message = "Name must be between 2 and 50 characters long.";
-    }
-
-    // Validate age
-    if (!isset($error_message) && !is_valid_number($age, 21, 150)) {
-        $error_message = "Invalid age.";
-    }
-
-    // Valid options for country
-    $options = array("USA", "UK", "Canada");
-
-    // Validate country
-    if (!isset($error_message) && !is_valid_option($country, $options)) {
-        $error_message = "Invalid country.";
-    }
-
-    // If there are no errors, user passed the age verification
-    if (!isset($error_message)) {
-        $age_verified = true;
-    }
-}
-
-// If age is verified, redirect to the unlocked page
-if (isset($age_verified) && $age_verified) {
-    header("Location: ./Alcohol.html");
-    exit;
-}
-?>
 
 
