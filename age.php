@@ -104,8 +104,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // If age is verified, redirect to the unlocked page
 if (isset($age_verified) && $age_verified) {
-    header("Location: Alcohol.html");
+    header("Location: ./Alcohol.html");
     exit;
 }
 ?>
+
 
