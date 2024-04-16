@@ -37,9 +37,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="CSS/Age.css">
     <title>Age Verification</title>
 </head>
 <body>
+     <a href="Homepage.html">
+            <img src="Images/K-Media.PNG" alt="Kunda Media Logo" style="height:200px; width:220px;">
+        </a>
+        <h3 style="text-align: right;">
+            <a href="About.html"> About</a>
+            <a href="Alcohol.html"> Alcohol Reviews</a>
+            <a href="Games.html"> Game Reviews</a>
+            <a href="Contact.html"> Contact us!</a>
+        </h3>
     <?php if (isset($age_verified) && $age_verified): ?>
         <!-- Show HTML content for unlocked page -->
         <h2>Welcome!</h2>
