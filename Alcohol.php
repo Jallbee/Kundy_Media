@@ -14,8 +14,8 @@ if ($conn->connect_error) {
 }
 
 // Receive form data
-if(isset($_POST['drinkname']) && isset($_POST['description'])) {
-    $drinkName = $_POST['drinkname'];
+if(isset($_POST['drinkName']) && isset($_POST['description'])) {
+    $drinkName = $_POST['drinkName'];
     $description = $_POST['description'];
 } else {
     die("Invalid form data");
