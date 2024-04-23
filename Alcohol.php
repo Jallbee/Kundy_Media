@@ -1,35 +1,60 @@
 <?php
-// Database connection parameters
-$servername = "192.185.2.183";
-$username = "jennifer_kmadmin";
-$password = "Jennykm24";
-$dbname = "jennifer_KundyMedia";
+include 'database-connection.php';
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (!empty($_POST['drinkName'])) {
+        $drinkName = $_POST['drinkName'];
+        $descript = $_POST['description'];
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+        $sql = "INSERT INTO `Alcohol` (`drinkName`, `recipe`)
+        VALUES (:drinkName, :descript)";
+
+        $statement = pdo($pdo, $sql, ['drinkName' => $drinkName, 'descript' => $descript]);
+    }
 }
-
-// Receive form data
-if(isset($_POST['drinkName']) && isset($_POST['description'])) {
-    $drinkName = $_POST['drinkName'];
-    $description = $_POST['description'];
-} else {
-    die("Invalid form data");
-}
-
-// Insert data into the database
-$sql = "INSERT INTO `Alcohol Suggestions` (drinkname,description) VALUES ('$drinkName', '$description')";
-
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-// Close the database connection
-$conn->close();
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alcohol Reviews!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/Alcohol.css">
+</head>
+<body>
+    <div class="header"> 
+        <a href="Homepage.html">
+            <img src="Images/K-Media.PNG" alt="Kunda Media Logo" style="height:200px; width:220px;">
+        </a>
+        <h3 style="text-align: right;">
+            <a href="About.html"> About</a>
+            <a href="Alcohol.html"> Alcohol Reviews</a>
+            <a href="Games.html"> Game Reviews</a>
+            <a href="Contact.html"> Contact us!</a>
+        </h3>
+    </div>
+    </div>
+    <div class="container">
+        <h1>Alcohol Reviews</h1>
+        <div id="reviews" class="card-container"></div>
+    </div>
+
+    <h1 style="text-align:center;">Share Your Alcohol or drink Suggestions</h1>
+    <form id="drinkForm" method="post" style="text-align:center;">
+        <label for="drinkName">Name:</label>
+        <input type="text" id="drinkName" name="drinkName" required>
+        <br>
+        <label for= "description">Description:</label> 
+        <textarea id= "description" name= "description" rows= "4" required></textarea> 
+        <br> <button type= "submit">Submit</button> </form>
+
+   <div id= "suggestions"></div>
+
+    <script src= "https://code.jquery.com/jquery-3.7.1.min.js"></script> 
+    <script src= "JS/Alcohol.js"></script>
+
+    
+</body>
+</html>
+</body>
+</html>
