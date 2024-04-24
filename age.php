@@ -52,7 +52,7 @@ if (isset($age_verified) && $age_verified) {
         </a>
         <h3 style="text-align: right;">
             <a href="About.html"> About</a>
-            <a href="Alcohol.html"> Alcohol Reviews</a>
+            <a href="age.php"> Alcohol Reviews</a>
             <a href="Games.html"> Game Reviews</a>
             <a href="Contact.html"> Contact us!</a>
         </h3>
@@ -66,7 +66,7 @@ if (isset($age_verified) && $age_verified) {
         <?php if (isset($error_message)): ?>
             <p style="color: red;"><?php echo $error_message; ?></p>
         <?php endif; ?>
-        <form action=" Alcohol.html" method="post">
+        <form action=" Alcohol.php" method="post">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required><br><br>
             
