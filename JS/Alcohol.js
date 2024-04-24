@@ -27,7 +27,7 @@
                 });
             }
 
-            var reviews = <?php echo file_get_contents('reviews.json'); ?>;
+            
 
             displayReviews(reviews);
 
