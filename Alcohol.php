@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </a>
         <h3 style="text-align: right;">
             <a href="About.html"> About</a>
-            <a href="Alcohol.html"> Alcohol Reviews</a>
+            <a href="age.php"> Alcohol Reviews</a>
             <a href="Games.html"> Game Reviews</a>
             <a href="Contact.html"> Contact us!</a>
         </h3>
