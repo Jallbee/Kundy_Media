@@ -39,16 +39,4 @@
         }
     });
 
-    $('#drinkForm').submit(function(event) {
-        event.preventDefault();
-
-        var drinkName = $('#drinkName').val();
-        var description = $('#description').val();
-
-        var suggestionElement = $('<div>').html('<strong>' + drinkName + '</strong>: ' + description);
-
-        $('#suggestions').append(suggestionElement);
-
-        $('#drinkForm').trigger('reset');
-    });
-});
+  
